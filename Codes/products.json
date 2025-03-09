@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Laptop RAM",
+      "price": 50.00,
+      "image": "../Assets/laptop-ram.png"
+    },
+    {
+      "name": "Laptop Keyboard",
+      "price": 20.00,
+      "image": "../Assets/laptop-keyboard.png"
+    },
+    {
+      "name": "Smartphone Screen",
+      "price": 100.00,
+      "image": "../Assets/smartphone-screen.png"
+    },
+    {
+      "name": "Laptop Charger",
+      "price": 15.00,
+      "image": "../Assets/laptop-charger.png"
+    },
+    {
+      "name": "Smartphone Case",
+      "price": 10.00,
+      "image": "../Assets/smartphone-case.png"
+    },
+    {
+      "name": "Laptop Battery",
+      "price": 60.00,
+      "image": "../Assets/laptop-battery.png"
+    },
+    {
+      "name": "laptop Microphone",
+      "price": 25.00,
+      "image": "../Assets/laptop-microphone.png"
+    },
+    {
+      "name": "Laptop Touchpad",
+      "price": 12.00,
+      "image": "../Assets/laptop-touchpad.png"
+    },
+    {
+      "name": "Smartphone Battery",
+      "price": 30.00,
+      "image": "../Assets/smartphone-battery.png"
+    },
+    {
+      "name": "Laptop SSD",
+      "price": 70.00,
+      "image": "../Assets/laptop-ssd.png"
+    },
+    {
+      "name": "Smartphone Charger",
+      "price": 15.00,
+      "image": "../Assets/smartphone-charger.png"
+    },
+    {
+      "name": "Laptop Fan",
+      "price": 35.00,
+      "image": "../Assets/laptop-fan.png"
+    }
+  ]
+  

@@ -1,0 +1,115 @@
+<!--# Title: Web Programming Assignment 2 E-Commerse Website-->
+<!--# Author: Bryan Jones-->
+<!--# ID: 1907425-->
+<!--# Tested on: Chrome for Windows, Mozilla Firefox for Linux, Github Pages-->
+<!--# -->
+<!--#Description: Assignment 2 E-Commerse Website containing HTML, CSS and Javascript code along with Website Assets-->
+<!--#-->
+<!--#Note:-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+    
+</head>
+<style>
+    /* reset styles */
+    * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif;}
+
+    body {
+        /* background image with dim */
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('../Assets/login-stock.jpg') no-repeat center center/cover;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        position: relative;
+    }
+</style>
+
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+      <h1 class="logo">XYZ Repairs</h1>
+      <nav class="nav">
+        <!--no hrefs for now-->
+          <a href="#products">Products</a>
+          <a href="#home">Services</a>
+          <a href="#contact">Contact</a>
+      </nav>
+    </div>
+</header>
+
+<!-- Login form container -->
+<div class="login-container">
+    <div class="login-form">
+        <h2>Login</h2>
+
+        <form id="loginForm" class="form-section">
+            <!-- username input -->
+            <div class="form-group">
+                <label for="username" class="input-label">Username</label>
+                <input type="text" id="username" class="input-field" name="username" required>
+            </div>
+
+            <!-- password input -->
+            <div class="form-group">
+                <label for="password" class="input-label">Password</label>
+                <input type="password" id="password" class="input-field" name="password" required>
+            </div>
+
+            <!-- submit button -->
+            <button type="submit" class="base-button submit-button">Login</button>
+
+            <!-- error message display -->
+            <div class="error-message" id="errorMessage" style="display:none;"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // track login attempts
+    let loginAttempts = 0;
+    const dusername = 'username'
+    const dpassword = 'password'
+
+    // handle login form validation and submission
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting by default
+
+        // get the username and password values from the form
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const errorMessage = document.getElementById("errorMessage");
+
+        // check password length
+        if (password.length < 8) {
+            errorMessage.textContent = "Password must be at least 8 characters long.";
+            errorMessage.style.display = "block";
+            return;
+        }
+
+        // username and password validation (hardcoded for demo)
+        if (username === dusername && password === dpassword) {
+            window.location.href = "products.html"; // redirect to products page on success
+        } else {
+            loginAttempts++;
+            errorMessage.textContent = `Invalid username or password. Attempt ${loginAttempts} of 3.`;
+            errorMessage.style.display = "block";
+
+            if (loginAttempts >= 3) {
+                window.location.href = "error.html" //go to error page if too many incorrect attempts
+                loginAttempts=0;
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

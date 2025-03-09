@@ -1,0 +1,222 @@
+<!--# Title: Web Programming Assignment 2 E-Commerse Website-->
+<!--# Author: Bryan Jones-->
+<!--# ID: 1907425-->
+<!--# Tested on: Chrome for Windows, Mozilla Firefox for Linux, Github Pages-->
+<!--# -->
+<!--#Description: Assignment 2 E-Commerse Website containing HTML, CSS and Javascript code along with Website Assets-->
+<!--#-->
+<!--#Note:-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storyboard - Wireframe - XYZ Repairs</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1700px;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .left-section {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-sizing: border-box;
+            height: auto;
+            overflow-y: auto;
+        }
+
+        .right-section {
+            flex: 2;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-sizing: border-box;
+            height: auto;
+            overflow-y: auto;
+            max-width: 50%;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1, h2, p {
+            font-size: 1rem;
+        }
+
+        .home-link {
+            background-color: rgba(7, 7, 7, 0.8);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <a href="products.html" class="home-link">
+        Home
+    </a>
+
+    <div class="container">
+        <!-- Left Section: -->
+        <div class="left-section">
+            <h1 style="text-align: center;">Business Overview</h1>
+            <h3>Business Description</h3>
+            <p>XYZ Repairs is an online e-commerce platform specializing in high-quality laptop and smartphone parts. Our mission is to provide customers with reliable components at affordable prices, ensuring that they can easily repair and upgrade their devices. We cater to both tech enthusiasts and everyday users who seek to enhance their devices' performance without breaking the bank.</p>
+
+            <h3>Logo</h3>
+            <p>The logo for XYZ Repairs features a modern and sleek design that incorporates a stylized wrench and circuit board elements, symbolizing both repair and technology. The color scheme includes shades of Black and green, representing trust and innovation.</p>
+            
+            <h3>Slogan</h3>
+            <p>"Revive Your Devices."</p>
+            
+            <h3>Mission Statement</h3>
+            <p>At XYZ Repairs, our mission is to empower customers by providing them with the tools and components they need to repair and enhance their devices. We strive to deliver exceptional customer service, high-quality products, and valuable resources to help our customers make informed decisions.</p>
+            
+            <h3>Vision Statement</h3>
+            <p>Our vision is to become the leading online destination for laptop and smartphone parts, recognized for our commitment to quality, customer satisfaction, and innovation. We aim to foster a community of tech-savvy individuals who are passionate about repairing and upgrading their devices.</p>
+            
+            <h3>Color Palette Justification</h3>
+            <p><strong>Primary Colors:</strong> Black, Gray<br>
+            <strong>Accent Colors:</strong> Purple, White</p>
+            <p><strong>Black:</strong> This color is associated with trust, reliability, and professionalism. It evokes a sense of security and enhances the overall user experience.</p>
+            <p><strong>Gray:</strong> Gray symbolizes renewal and balance. It represents technology and innovation, making it ideal for a business focused on repairs and upgrades.</p>
+            <p><strong>Purple & White:</strong> These neutral colors ensure readability and contribute to a professional appearance. They allow the primary colors to stand out while maintaining a modern aesthetic.</p>
+            
+            <h3>Intended Audience</h3>
+            <p>The primary audience for XYZ Repairs includes:</p>
+            <ul>
+                <li><strong>Tech Enthusiasts:</strong> Individuals passionate about technology who enjoy repairing or upgrading their devices.</li>
+                <li><strong>Everyday Consumers:</strong> Users who need reliable components for their devices but may not have technical expertise.</li>
+                <li><strong>Small Businesses & Freelancers:</strong> Professionals who need quick access to replacement parts to minimize downtime.</li>
+                <li><strong>Students:</strong> Students who need affordable parts to maintain their laptops and smartphones.</li>
+            </ul>
+
+        </div>
+
+        <div class="right-section">
+            <!-- Index Page -->
+            <h1 style="text-align: center;">Wireframe </h1>
+            <div class="page-box">
+                <h2>Index Page</h2>
+                <header>
+                    <h1>XYZ Repairs</h1>
+                </header>
+                <nav>
+                    <a href="#">Products</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <main>
+                    <h2>Login Form</h2>
+                    <p>[Username and Password fields]</p>
+                    <p>[Login Button]</p>
+                </main>
+            </div>
+
+            <!-- Products Page -->
+            <div class="page-box">
+                <h2>Products Page</h2>
+                <header>
+                    <h1>XYZ Repairs - Products</h1>
+                </header>
+                <nav>
+                    <a href="#">Products</a>
+                    <a href="#">Services</a>
+                    <a href="#">Storyboard</a>
+                    <a href="#">References</a>
+                    <button>Cart (<span>0</span>)</button>
+                </nav>
+                <main>
+                    <h2>Product Listings</h2>
+                    <p>[List of available products with brief descriptions]</p>
+                </main>
+                <footer>
+                    <p>&copy; 2025 XYZ Repairs. Revive Your Devices. All rights reserved.</p>
+                </footer>
+            </div>
+
+            <!-- Error Page -->
+            <div class="page-box">
+                <h2>Error Page</h2>
+                <header>
+                    <h1>Login Error</h1>
+                </header>
+                <main>
+                    <h2>Login Failed</h2>
+                    <p>Too many failed attempts. Please try again later.</p>
+                    <p>[Back to Login Button]</p>
+                </main>
+                <footer>
+                    <p>&copy; 2025 XYZ Repairs. Revive Your Devices. All rights reserved.</p>
+                </footer>
+            </div>
+
+            <!-- References Page -->
+            <div class="page-box">
+                <h2>References Page</h2>
+                <header>
+                    <h1>References</h1>
+                </header>
+                <nav>
+                    <a href="#">Login</a>
+                    <a href="#">Products</a>
+                    <a href="#">Storyboard</a>
+                    <a href="#">References</a>
+                </nav>
+                <main>
+                    <h2>External Resources</h2>
+                    <p>[List of reference links and resources]</p>
+                </main>
+                <footer>
+                    <p>&copy; 2025 XYZ Repairs. Revive Your Devices. All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

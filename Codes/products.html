@@ -1,0 +1,167 @@
+<!--# Title: Web Programming Assignment 2 E-Commerse Website-->
+<!--# Author: Bryan Jones-->
+<!--# ID: 1907425-->
+<!--# Tested on: Chrome for Windows, Mozilla Firefox for Linux, Github Pages-->
+<!--# -->
+<!--#Description: Assignment 2 E-Commerse Website containing HTML, CSS and Javascript code along with Website Assets-->
+<!--#-->
+<!--#Note:-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Parts Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1 class="logo">XYZ Repairs</h1>
+        <nav class="nav">
+          <!--no hrefs for now-->
+            <a href="#products">Products</a>
+            <a href="#home">Services</a>
+            <a href="storyboard.html">Storyboard</a>
+            <a href="references.html">References</a>
+            <button class="base-button" id="cart-link">Cart (<span id="cart-count">0</span>)</button>
+        </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h2>Find the Best Laptop and Smartphone Parts</h2>
+        <p>High-quality components at affordable prices.</p>
+        <p>Need a repair? Schedule a service with our expert technicians.</p>
+        <button class="base-button">Shop Now</button>
+        <button class="base-button" id="schedule-repair-btn">Schedule Repair</button>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <h2>Our Products</h2>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section id="about-us" class="hero">
+      <div class="hero-content">
+        <h2>About Us</h2>
+        <p>Full Name: Bryan Jones</p>
+        <p>ID#: 1907425</p>
+        <p>Email: <a href="mailto:2210723@utech.edu.jm">1907425@utech.edu.jm</a></p>
+        <p>Module Code: (CIT2011)</p>
+        <p>Assignment Name: Web Development Assignment 2</p>
+        <p>Day/Time of Class: Monday/12:00 PM - 2:00 PM</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Overlay for Cart -->
+  <div class="modal-overlay" id="cart-overlay"></div>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="cart-modal" style="display: none;">
+    <div class="cart-modal-header">
+      <h2>Cart</h2>
+      <button class="modal-close">✕</button>
+    </div>
+    <div class="cart-modal-content">
+      <div class="cart-items-header">
+        <span>Product</span>
+        <span></span>
+        <span>Price</span>
+        <span>Quantity</span>
+        <span>Remove</span>
+      </div>
+      <div id="cart-list" class="cart-items-list"></div>
+    </div>
+    <div class="cart-modal-footer">
+      <button class="base-button" id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+
+  <!-- Modal Overlay for Invoice -->
+  <div class="modal-overlay" id="invoice-overlay" style="display: none;"></div>
+
+  <!-- Invoice Modal -->
+  <div id="invoice-modal" class="invoice-modal" style="display: none;">
+    <div class="invoice-header">
+      <h3>Invoice</h3>
+      <button class="modal-close">✕</button>
+    </div>
+    <div class="invoice-date">
+      <p>Date: <span id="invoice-date"></span></p>
+    </div>
+    <div class="invoice-items">
+      <div class="invoice-items-header">
+        <span>Item</span>
+        <span>Quantity</span>
+        <span>Total</span>
+      </div>
+      <div id="invoice-list" class="invoice-items-list"></div>
+    </div>
+    <div class="invoice-totals">
+      <p>Subtotal: <span id="subtotal">$0.00</span></p>
+      <p>Tax (10%): <span id="tax">$0.00</span></p>
+      <p>Discount (5% if >$100): <span id="discount">$0.00</span></p>
+      <p class="total">Total: <span id="total">$0.00</span></p>
+      <p id="checkout-success" style="display: none; color: #2ecc71;">Purchase Successful!</p>
+    </div>
+    <div class="invoice-buttons">
+      <button class="base-button" id="invoice-cancel">Cancel</button>
+      <button class="base-button" id="invoice-exit">Exit</button>
+    </div>
+  </div>
+
+  <!-- Modal Overlay for Repair -->
+  <div class="modal-overlay" id="repair-overlay"></div>
+
+  <!-- Repair Schedule Modal -->
+  <div id="repair-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <h2>Schedule a Repair</h2>
+      <form id="repair-form">
+        <div class="form-group">
+          <label for="repair-name">Name:</label>
+          <input type="text" id="repair-name" name="repair-name" required>
+        </div>
+        <div class="form-group">
+          <label for="device-type">Device Type:</label>
+          <select id="device-type" name="device-type" required>
+            <option value="" disabled selected>Select a device</option>
+            <option value="Smartphone">Smartphone</option>
+            <option value="Computer">Computer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Time Slot:</label><br>
+          <input type="radio" id="slot1" name="time-slot" value="9:00 AM - 11:00 AM" required>
+          <label for="slot1">9:00 AM - 11:00 AM</label><br>
+          <input type="radio" id="slot2" name="time-slot" value="1:00 PM - 3:00 PM">
+          <label for="slot2">1:00 PM - 3:00 PM</label><br>
+          <input type="radio" id="slot3" name="time-slot" value="3:00 PM - 5:00 PM">
+          <label for="slot3">3:00 PM - 5:00 PM</label>
+        </div>
+        <div class="form-group">
+          <label for="repair-details">Repair Details:</label>
+          <textarea id="repair-details" name="repair-details" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="base-button">Submit</button>
+        <p id="repair-success" style="display: none; color: green;">Repair scheduled!</p>
+      </form>
+    </div>
+  </div>
+    <!-- About Us Section -->
+
+  <footer class="footer">
+    <p>© 2025 XYZ Repairs Store. Revive Your Devices. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
